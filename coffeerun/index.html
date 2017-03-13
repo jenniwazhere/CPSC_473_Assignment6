@@ -41,11 +41,11 @@
                         Grande
                       </label>
                     </div>
-                    
+
                     <!-- Bronze challenge: Super size it -->
                     <div class="radio">
                         <label>
-                          <input type="radio" name="size" value="Coffee-zilla">
+                          <input type="radio" name="size" value="Coffee-zilla" id="Coffe-zilla">
                           Coffee-zilla
                         </label>
                     </div>
@@ -82,13 +82,84 @@
                         </script>
                     </div>
 
-                    <button type="submit" class="btn btn-default">Submit</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
+                    <!-- Gold Challenge: Adding Achievement -->
+                    <div class="form-group">
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" onsubmit="return validateForm();">Submit</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+
+                        <script>
+                            var strength, shot, selectedshot;
+                            strength = document.getElementById("strengthLevel").value;
+                            shot = document.getElementById("flavorShot");
+                            selectedshot = shot.options[shot.selectedIndex].value;
+
+                            function validateForm() {
+                                if (document.getElementById("Coffee-zilla").checked && strength > 70 && selectedshot != "") {
+                                    //get modal
+                                }
+                            }
+                        </script>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Achievement Unlocked</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>We see that you love to drink your coffee strong!</p>
+                                        <p>Would you like to use your Achievement?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalForm">Yes</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+
+                                        <div class="model fade" id="myModalForm" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="model-header">
+                                                    <h4 class="modal-title">Pick your super power</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="panel-body">
+                                                        <form data-coffee-order="form">
+                                                            <div class="radio">
+                                                                <label>
+                                                        <input type="radio" name="superpower" value="time travel">
+                                                        time travel
+                                                      </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <label>
+                                                        <input type="radio" name="superpower" value="mind reading">
+                                                        mind reading
+                                                      </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <label>
+                                                        <input type="radio" name="superpower" value="bug-free code">
+                                                        bug-free code
+                                                      </label>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="scripts/formhandler.js" charset="utf-8"></script>
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/truck.js" charset="utf-8"></script>
