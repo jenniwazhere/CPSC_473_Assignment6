@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>coffeerun</title>
@@ -45,7 +44,7 @@
                     <!-- Bronze challenge: Super size it -->
                     <div class="radio">
                         <label>
-                          <input type="radio" name="size" value="Coffee-zilla" id="Coffe-zilla">
+                          <input type="radio" name="size" value="Coffee-zilla" id="Coffe-zilla" checked>
                           Coffee-zilla
                         </label>
                     </div>
@@ -64,15 +63,14 @@
                     <!-- Silver Challenge: Showing the value of the slider Changes -->
                     <div class="form-group">
                         <label for="strengthLevel">Caffeine Rating</label>
-                        <span id="range">0</span>
-                        <input name="strength" id="strengthLevel" type="range" value="0" onchange="myFunction(this.value)">
+                        <span id="range">100</span>
+                        <input name="strength" id="strengthLevel" type="range" value="100" onchange="myFunction(this.value)">
                         <script>
                             function myFunction() {
                                 var x = document.getElementById("strengthLevel").value;
                                 var v = document.getElementById("range");
                                 v.style.color = "yellow";
                                 document.getElementById("range").innerHTML = x;
-
                                 if (x < 40) {
                                     v.style.color = "green";
                                 } else if (x > 70) {
@@ -85,7 +83,7 @@
                     <!-- Gold Challenge: Adding Achievement -->
                     <div class="form-group">
                         <!-- Trigger the modal with a button -->
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" onsubmit="return validateForm();">Submit</button>
+                        <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
                         <button type="reset" class="btn btn-default">Reset</button>
 
                         <script>
@@ -104,7 +102,7 @@
                         <!-- Modal -->
                         <div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
-                                <!-- Modal content-->
+                                <!--Modal content -->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title">Achievement Unlocked</h4>
@@ -148,7 +146,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -164,6 +161,7 @@
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/truck.js" charset="utf-8"></script>
     <script src="scripts/main.js" charset="utf-8"></script>
+    <script src="scripts/modal.js" charset="utf-8"></script>
 </body>
 
 </html>
